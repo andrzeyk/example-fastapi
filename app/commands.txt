@@ -24,7 +24,7 @@ https://github.com/andrzeyk/example-fastapi.git
 …or create a new repository on the command line
 git init
 git add --all
-git commit -m "init commit"
+git commit -m "init commit" 
 git branch -M main
 git remote add origin https://github.com/andrzeyk/example-fastapi.git
 git push -u origin main
@@ -33,3 +33,11 @@ git push -u origin main
 git remote add origin https://github.com/andrzeyk/example-fastapi.git
 git branch -M main
 git push -u origin main
+
+git remote
+
+#heroku
+heroku login
+heroku create fastapi-andrzejuk
+#https://dry-everglades-52241.herokuapp.com/ | https://git.heroku.com/dry-everglades-52241.git
+  
