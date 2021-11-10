@@ -1,0 +1,35 @@
+source /home/akaminski/tmp/fastapi/venv/bin/activate
+
+#start servera dev fastapi
+uvicorn app.main:app --reload
+
+#alembic migracje
+alembic init alembic
+alembic revision -m "create post table"
+alembic current
+alembic history
+alembic upgrade 0a732b62a58e
+alembic upgrade 5d6614157f93
+alembic upgrade +1
+alembic upgrade head
+alembic downgrade 0a732b62a58e
+alembic downgrade -1
+
+alembic revision --autogenerate -m "autogenerate votes table" #generuje zmiany w tabelach automatycznie
+alembic upgrade head
+
+#git
+https://github.com/andrzeyk/example-fastapi.git
+
+…or create a new repository on the command line
+git init
+git add --all
+git commit -m "init commit"
+git branch -M main
+git remote add origin https://github.com/andrzeyk/example-fastapi.git
+git push -u origin main
+
+…or push an existing repository from the command line
+git remote add origin https://github.com/andrzeyk/example-fastapi.git
+git branch -M main
+git push -u origin main
